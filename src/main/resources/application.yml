@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: waa-lab-2
+  datasource:
+    password: 1
+    url: jdbc:postgresql://localhost:5432/lab2
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: false
+    defer-datasource-initialization: true
+    generate-ddl: true
+  sql:
+     init:
+      mode: always
+  security:
+    user:
+      password: password
+    jwt:
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      expiration: 60000 # 86400000 # a day
+      refresh-token:
+        expiration: 604800000
+server:
+  port: 8080
